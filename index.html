@@ -3,42 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Resume Builder</title>
+    <title>Professional Resume Builder</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <form id="resumeForm">
-    <h2>Personal Information</h2>
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required><br><br>
+    <header class="header">
+        <h1>Resume Builder</h1>
+        <p>Build your career starting here!</p>
+    </header>
+    <main>
+        <section class="form-container">
+            <form id="resumeForm">
+                <h2>Personal Information</h2>
+                <div class="form-group">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" placeholder="yourname@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="123-456-7890" required>
+                </div>
+                <div class="form-group">
+                    <label for="photo">Profile Photo:</label>
+                    <input type="file" id="photo" accept="image/*">
+                </div>
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required><br><br>
+                <h2>Professional Summary</h2>
+                <div class="form-group">
+                    <textarea id="summary" name="summary" placeholder="Briefly describe yourself..." rows="4" required></textarea>
+                </div>
 
-    <label for="phone">Phone:</label>
-    <input type="text" id="phone" name="phone" required><br><br>
+                <h2>Education</h2>
+                <div id="education-section">
+                    <div class="form-group">
+                        <input type="text" name="education" placeholder="Degree, Institution, Year" required>
+                    </div>
+                </div>
+                <button type="button" class="add-btn" onclick="addField('education-section', 'Degree, Institution, Year')">Add More</button>
 
-<h2>Education</h2>
-<label for="education">Education:</label>
-    <input type="text" id="education" name="education" required><br><br>
+                <h2>Work Experience</h2>
+                <div id="experience-section">
+                    <div class="form-group">
+                        <input type="text" name="experience" placeholder="Job Title, Company, Year" required>
+                    </div>
+                </div>
+                <button type="button" class="add-btn" onclick="addField('experience-section', 'Job Title, Company, Year')">Add More</button>
 
-    <h2>Work Experience</h2>
-    <label for="experience">Experience:</label>
-    <input type="text" id="experience" name="experience" required><br><br>
+                <h2>Skills</h2>
+                <div id="skills-section">
+                    <div class="form-group">
+                        <input type="text" name="skills" placeholder="Skill (e.g., JavaScript, Teamwork)" required>
+                    </div>
+                </div>
+                <button type="button" class="add-btn" onclick="addField('skills-section', 'Skill (e.g., JavaScript, Teamwork)')">Add More</button>
 
-    <h2>Skills</h2>
-    <label for="skills">Skills:</label>
-    <input type="text" id="skills" name="skills" required><br><br>
-
-    <h2>Description</h2>
-    <label for="description">Description:</label>
-    <input type="text" id="description" name="description" required><br><br>
-
-    <button type="submit">Generate Resume</button>
-
-
-    </form>
-    <div id="resumeOutput"></div>
+                <button type="submit" class="generate-btn">Generate Resume</button>
+            </form>
+        </section>
+        <section id="resumeOutput" class="resume-container"></section>
+    </main>
+    <footer class="footer">
+        <p>Designed and Developed by <strong>Areesha Tanoli</strong></p>
+    </footer>
+    
     <script src="index.js"></script>
 </body>
 </html>
